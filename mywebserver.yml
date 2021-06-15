@@ -15,7 +15,3 @@
      name: apache2
      state: started   
 
-  - name: i want to install tree
-    apt:
-     name: tree
-     state: present
