@@ -1,6 +1,6 @@
 ---
 - hosts: mywebservers
-  become: yes
+  become:     
   tasks:
   - name: install java on ubuntu nodes
     apt:
@@ -13,3 +13,5 @@
       name: "{{myredhatjavapack}}"
       state: present
     when: ansible_os_family=="RedHat"  
+
+    
