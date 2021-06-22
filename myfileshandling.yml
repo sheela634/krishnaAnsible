@@ -3,12 +3,11 @@
   become: yes
   tasks:
   - include_tasks: myfile.yml
-
   - name: install webserver
     apt:
       name: apache2
       state: present
-      
+
   - name: copy index file into nodes
     template:
       src: myindex.j2
