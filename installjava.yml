@@ -1,6 +1,6 @@
 ---
 - hosts: mywebservers
-  become:     
+  become: yes    
   tasks:
   - name: install java on ubuntu nodes
     apt:
@@ -14,5 +14,5 @@
       state: present
     when: ansible_os_family=="RedHat"  
 
-    
+
     
