@@ -7,8 +7,16 @@
     apt:
       name: apache2
       state: present
+    notify: restartapache  
 
   - name: copy index file into nodes
     template:
        src: myindex.j2
        dest: /var/www/html/index.html
+    notify: restartapache
+
+  handlers:
+  - name: restartapache
+    apt:
+      name: apache2
+      state: restarted     
